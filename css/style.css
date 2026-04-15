@@ -196,3 +196,246 @@ footer a:hover{
     color: var(--organge-vif);
     transform: translate Y(-3px);
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f4f6fa;
+    color: #1e293b;
+    line-height: 1.5;
+}
+
+
+header {
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header div a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--violet-fonce);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+header div a:hover {
+    color: #3b82f6;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.8rem;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--violet-fonce);
+    transition: color 0.2s;
+    padding-bottom: 4px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #3b82f6;
+    border-bottom: 2px solid #3b82f6;
+}
+
+main {
+    max-width: 1280px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--violet-fonce);
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #3b82f6;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+.grille-projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.grille-projets article {
+    background: #ffffff;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grille-projets article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+}
+
+.grille-projets figure {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background-color: #e2e8f0;
+}
+
+.grille-projets img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.grille-projets article:hover img {
+    transform: scale(1.02);
+}
+
+.grille-projets h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 1rem 1rem 0.5rem;
+    color: var(--violet-fonce);
+}
+
+.grille-projets p {
+    font-size: 0.9rem;
+    color: #475569;
+    margin: 0 1rem 1rem;
+    line-height: 1.4;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 1rem 1rem;
+}
+
+.tags span {
+    background: #eef2ff;
+    color: #1e40af;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+}
+
+.liens-projet {
+    display: flex;
+    gap: 1.2rem;
+    margin: 0 1rem 1.2rem;
+    border-top: 1px solid #e9edf2;
+    padding-top: 1rem;
+}
+
+.liens-projet a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #3b82f6;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s;
+}
+
+.liens-projet a:hover {
+    color: #1e40af;
+    text-decoration: underline;
+}
+
+.liens-projet i {
+    font-size: 1rem;
+}
+
+footer {
+    background-color:var(--violet-doux);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+footer div a {
+    color: #cbd5e1;
+    font-size: 1.3rem;
+    transition: color 0.2s;
+}
+
+footer div a:hover {
+    color: #3b82f6;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .grille-projets {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .liens-projet {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
